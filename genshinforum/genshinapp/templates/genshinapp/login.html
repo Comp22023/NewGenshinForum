@@ -1,0 +1,70 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+	<title>{% block title %}Авторизация{% endblock title %}</title>
+	<link rel="stylesheet" href="{% static 'js/bxslider/dist/jquery.bxslider.css'%}">
+</head>
+<body>
+	<div class="header">
+		<div class="logo">
+		<a href="{% url 'main' %}"><img src="{%static 'img/loho.png'%}" alt=""></a>
+	</div>
+		<div class="header_buts">
+			<ul>
+				<li>
+					<p> <a href="#">ГЛАВНАЯ</a></p>
+				</li>
+			</ul>
+		</div>
+		<div class="header_buts">
+			<ul>
+				<li>
+			<p> <a href="{% url 'themes' %}">ТЕМЫ</a></p>
+				</li>
+			</ul>
+		</div>
+
+		<div class="profile">
+			{% if user.is_authenticated %}
+			<div class="profile_nick">
+				<div class="profile_img">
+				<img src="{% static 'img/Pimon.png' %}" alt="Аватар пользователя">
+				</div>
+				<p><a href="{% url 'lk' %}">{{user.username}}</a></p> <a href="{% url 'logout' %}">Выйти</a>
+			</div>
+			{% else %}
+			<div class="header_buts">
+			<ul>
+				<li>
+			<p> <a href="{% url 'reg' %}"	>РЕГИСТРАЦИЯ</a></p>
+				</li>
+			</ul>
+			</div>
+			<div class="header_buts">
+			<ul>
+				<li>
+			<p> <a href="{% url 'login' %}">ВХОД</a></p>
+				</li>
+			</ul>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+    <div class="logincon">
+        <div class="loginwindow">
+			<form method="post">
+				{% csrf_token %}
+				<label for="username">Логин:</label>
+				<input type="text" name="username" id="username">
+				<label for="password">Пароль</label>
+				<input type="password" name="password" id="password">
+				<button type="submit"> Войти :)</button>
+			</form>
+		</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends 'genshinapp/index.html' %}
+{% load static%}
+
+{% block title %} {% for i in themes %} {{i.themename}} {% endfor %} {% endblock title %}
+
+{% block container %}
+
+<div class="containertheme1">
+    <div class="theme1">
+        {% for i in themes%}
+        <p>{{i.themename|safe}}</p>
+        {% endfor %}
+    </div>
+    <div class="theme2">
+        {% for s in themes%}
+        {{s.themecontent|safe}}
+        <img src="/static/img/{{s.themeimg}}" alt="">
+        {% endfor %}
+    </div>
+            <div class="commentaries" id="commentaries">
+				<form method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+<!--                    {{ form.as_p }}-->
+					<label for="commentcontent">Содержание комментария:</label>
+					<textarea name="commentcontent" id="commentcontent" cols="30" rows="10">
+					</textarea>
+					<label for="id_commentimg" id="themeimg">Загрузить изображение:</label>
+					<input name="commentimg" type="file" id="id_commentimg">
+					<br>
+    			<button class="button" onclick="sendText()">Submit text</button>
+				</form>
+                {% for i in comments %}
+                <div class="coment">
+                    <p class="coment_p">{{i.user}}
+                    {{i.comment_date}}</p>
+                    {{i.commentcontent | safe}}
+                    <img src="/static/img/{{i.commentimg}}" alt="">
+                </div>
+                {% endfor %}
+			</div>
+</div>
+{% endblock container %}
+{% block script %}
+<script src="{% static 'js/comments.js' %}"></script>
+{% endblock script %}
+
+{% block container1 %}{% endblock container1 %}

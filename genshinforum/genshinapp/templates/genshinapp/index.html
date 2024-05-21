@@ -1,0 +1,104 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+	<title>{% block title %}Форум по игре Genshin Impact | Главная страница{% endblock title %}</title>
+	<link rel="stylesheet" href="{% static 'js/bxslider/dist/jquery.bxslider.css'%}">
+	<script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="logo">
+		<a href="{% url 'main' %}"><img src="{%static 'img/loho.png'%}" alt=""></a>
+	</div>
+		<div class="header_buts">
+			<ul>
+				<li>
+					<p> <a href="{% url 'main' %}">ГЛАВНАЯ</a></p>
+				</li>
+			</ul>
+		</div>
+		<div class="header_buts">
+			<ul>
+				<li>
+			<p> <a href="{% url 'themes' %}">ТЕМЫ</a></p>
+				</li>
+			</ul>
+		</div>
+
+		<div class="profile">
+			{% if user.is_authenticated %}
+			<div class="profile_nick">
+				<div class="profile_img">
+				<img src="{% static 'img/Pimon.png' %}" alt="Аватар пользователя">
+				</div>
+				<p><a href="{% url 'lk' %}">{{user.username}}</a></p> <a href="{% url 'logout' %}">Выйти</a>
+			</div>
+			{% else %}
+			<div class="header_buts">
+			<ul>
+				<li>
+			<p> <a href="{% url 'reg' %}"	>РЕГИСТРАЦИЯ</a></p>
+				</li>
+			</ul>
+			</div>
+			<div class="header_buts">
+			<ul>
+				<li>
+			<p> <a href="{% url 'login' %}">ВХОД</a></p>
+				</li>
+			</ul>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+	{% block container %}
+	<div class="container">
+		<div class="maintxt">
+			<img src="{%static 'img/glogo.png'%}" alt="">
+		</div>
+		<div class="description">
+			{% block description %}
+			<div class="aboutforum">
+				<p>Genshin Impact, — это китайская условно-бесплатная онлайн-игра, которая в 2020 году разорвала интернет и стала настоящим подростковым хитом. По сюжету, брат и сестра застревают в волшебном мире и теряют друг друга. На этом и построена завязка: игроку нужно найти потерянного брата либо сестру. Но заниматься этим сразу необязательно. Почему? Потому что перед игроком открывается огромный мир под названием Тейват, поделённый на семь регионов — в каждом своя культура, персонажи и даже своя кухня. На данный момент в игре доступны всего 5 регионов - Мондштадт, Ли Юэ, Инадзума, Сумеру и Фонтейн.</p>
+			</div>
+			{% endblock description %}
+		</div>
+		<div class="sliderblock">
+				<div class="slider">
+					<div><img src="{% static 'img/mond.png' %}" alt=""></div>
+					<div><img src="{% static 'img/li.png' %}" alt=""></div>
+					<div><img src="{% static 'img/inadzuma.png' %}" alt=""></div>
+					<div><img src="{% static 'img/sumeru.png' %}" alt=""></div>
+					<div><img src="{% static 'img/fontaine.png' %}" alt=""></div>
+				</div>
+		</div>
+	</div>
+	{% endblock container %}
+	<div class="container1">
+		{% block container1 %}
+		<div class="regtxt">
+			<p>Ты никогда не играл в геншин? Зарегистрируйся прямо сейчас!</p>
+		</div>
+		<div class="regimg">
+			<a href="https://genshin.hoyoverse.com/pre-register/"> <img src="{% static 'img/regimg.png' %}"></a>
+		</div>
+		{% endblock container1 %}
+	</div>
+	{% block script %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="{% static 'js/bxslider/dist/jquery.bxslider.min.js' %}"></script>
+		<script src="{% static 'js/slider.js' %}"></script>
+		<script src="{% static 'js/script.js' %}"></script>
+	{% endblock script %}
+	{% block footer %}
+  <div class="footer">
+      <a class="footer_icons" href="https://vk.com/vd0va"><img src="/static/img/vk.png" alt=""></a>
+      <h2>© 2024 GenHUB | Katya-yurinova@bk.ru</h2>
+  </div>
+  {% endblock footer %}
+</body>
+</html>

@@ -1,0 +1,457 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+	font-family: '85w-heavy1'; 
+	src: url(../fonts/85w-heavy1.ttf); 
+}
+
+ul{
+	list-style-type: none;
+}
+
+body{
+	background-image: url("../img/Raidenwallpaper.jpeg");
+    background-size:cover;
+}
+
+.logo{
+    width: 212px;
+}
+.logo img{
+   width: 100px;
+   height: 100%;
+}
+
+.header{
+	display: flex;
+	height:100px;
+	width: 100%;
+	background: #BEA8CB;	
+}
+.header_buts{
+    width: 12%;
+    padding-left: 6%;
+    display:flex;
+    align-items: center;
+    margin-left:2.5%;
+	cursor: pointer;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+.header_buts a{
+    text-decoration: none;
+	font-size: 25px;
+	color: white;
+	font-family: '85w-heavy1';
+}
+.profile{
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content: flex-end;
+}
+.profile_nick{
+    display:flex;
+    align-items: center;
+    margin-right: 2.5%;
+}
+.profile_nick p{
+    font-size: 25px;
+	color: white;
+	font-family: '85w-heavy1';
+	font-weight: 400;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    padding-right:2%;
+}
+.profile_nick a{
+    font-size: 25px;
+	color: white;
+	font-family: '85w-heavy1';
+	font-weight: 400;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+.profile_img{
+    width: 100px;
+}
+.profile_img img{
+    width:100%;
+    height:100%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.maintxt{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    margin-top: 2%;
+}
+.maintxt img{
+    width: 25%;
+    height:  25%;
+}
+
+.description{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.aboutforum{
+    width: 40%;
+    backdrop-filter: blur(2px);
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+.aboutforum p{
+    color:white;
+    font-family: '85w-heavy1';
+    text-align: center;
+    font-size: 20px;
+    -webkit-text-stroke: #517194;
+    text-shadow: 1px 1px 2px black;
+}
+.sliderblock{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+.container1{
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.regtxt{
+    margin-top: 10%;
+    width: 40%;
+    backdrop-filter: blur(2px);
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.regtxt p{
+    color:white;
+    font-family: '85w-heavy1';
+    text-align: center;
+    font-size: 30px;
+    -webkit-text-stroke:  #000000;
+    text-shadow: 3px 3px 3px #36306B;
+}
+
+.containerthemes{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.themebox{
+   align-items: center;
+   display: flex;
+   padding: 2%;
+   margin-top: 1%;
+   width: 50%;
+   height: 100%; 
+   flex-direction: column;
+   box-shadow: 3px 2px 3px #2f0953;
+   border-radius: 10%;
+   background-color:rgb(212, 201, 219);
+}
+
+.themeсont{
+    margin-top: 3%;
+    align-items: center;
+    display: flex;
+    border-radius: 10%;
+   width: 80%;
+   height: 100%; 
+   background-color:rgb(255, 255, 255);
+   flex-direction: column;
+}
+.themeсont a{
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+    padding:3%;
+    font-family: '85w-heavy1';
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px rgb(191, 167, 207);
+}
+
+.themeсont img{
+    width:50%;
+    height:100%;
+}
+
+.themebut{
+    margin-top: 1%;
+    display: flex;
+}
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #efdcfb;
+	background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+	background-color:#dfbdfa;
+	border-radius:6px;
+	border:1px solid #c584f3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #9752cc;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
+	background-color:#bc80ea;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.themeblock{
+    margin-top: 1%;
+    padding: 1%;
+    background: #BEA8CB;
+    width: 30%;
+    height: 100%;
+    display: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+.cancelthemeblock{
+    margin-top: 1%;
+    display: none;
+    cursor: pointer;
+    width: 50%;
+    justify-content: flex-end;
+}
+.cancelthemeblock img{
+    width: 5%;
+    height: 5%;
+}
+.containertheme1{
+    padding: 1%;
+    margin-top: 2%;
+    margin-left:9%;
+    display: flex;
+    background: #BEA8CB;
+    width: 80%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10%;
+}
+.theme1{
+    flex-direction: column;
+    display: flex;
+    padding: 1%;
+    background: white;
+    width: 60%;
+    height: 100%;
+    border-radius: 10%;
+    align-items: center;
+}
+.theme1 p{
+    font-size: 20px;
+    
+} 
+.theme2{
+    margin-top: 1%;
+    flex-direction: column;
+    display: flex;
+    padding: 1%;
+    background: white;
+    width: 80%;
+    height: 100%;
+    border-radius: 10%;
+    align-items: center;
+}
+.theme2 img{
+    width:40%;
+    height:100%;
+}
+.regwindowcon{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+.regwindow{
+    margin-top: 10%;
+    border-radius: 10%;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    width: 15%;
+    height: 100%;
+    padding: 2%;
+    background: #BEA8CB;
+}
+.regwindow input{
+    width: 99%;
+}
+.loginwindow button{
+    cursor:pointer;
+    font-family: '85w-heavy1';
+    font-size: 15px;
+    color: #000000 !important;
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: 2px ridge black;
+    background: #ffffff;
+    margin-top:2%;
+}
+.regwindow button{
+    font-family: '85w-heavy1';
+    font-size: 15px;
+    color: #000000 !important;
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: 2px ridge black;
+    background: #ffffff;
+    margin-top:2%;
+    cursor:pointer;
+}
+.logincon{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+.loginwindow{
+    margin-top: 10%;
+    border-radius: 10%;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    width: 16%;
+    height: 100%;
+    padding: 2%;
+    background: #BEA8CB;
+}
+.coment{
+   margin-top: 5%;
+    border-radius: 10%;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    background: #ffffff; 
+}
+.coment img{
+    width:30%;
+}
+.coment_p{
+    color:rgb(0, 0, 0);
+    font-family: '85w-heavy1';
+    text-align: center;
+    font-size: 20px;
+    -webkit-text-stroke: #517194;
+    text-shadow: 1px 1px 2px black;
+}
+.avatar{
+    border-radius:10px;
+    margin-top: 2%;
+    width: 150px;
+    height: 150px;
+    background: #BEA8CB;
+}
+.namenick{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.avatar img{
+    width: 100%;
+    height: 100%;
+}
+.name {
+    border-radius: 10px;
+    margin-left: 2%;
+    margin-top: 2%;
+    width: 20%;
+    height: 40px;
+    background: #BEA8CB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:'85w-heavy1';
+}
+.temi p{
+    color:white;
+    font-family: '85w-heavy1';
+    text-align: center;
+    font-size: 30px;
+    -webkit-text-stroke:  #000000;
+    text-shadow: 3px 3px 3px #36306B;
+}
+.containerthemes1{
+    margin-top: 5%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.footer{
+    flex-shrink: 0;
+    display:flex;
+    width:100%;
+    height:10%;
+    background: #BEA8CB;
+    margin-top: auto;
+    flex-direction:column;
+    align-items:center;
+}
+
+.footer_info{
+    margin:2%;
+    width:50%;
+    height:10%;
+    display:flex;
+    justify-content: center;
+}
+
+.footer_info h2{
+    color:#white;
+    font-family:myfont;
+}
+.footer_icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer_icons img{
+    width:40%;
+}
+.footer h2{
+    font-family: '85w-heavy1';
+    color:white;
+    margin-bottom: 2%;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}

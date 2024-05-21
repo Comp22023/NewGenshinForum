@@ -1,0 +1,90 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+	<link rel="stylesheet" href="{% static 'js/bxslider/dist/jquery.bxslider.css'%}">
+	<title>Темы</title>
+	<script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="logo">
+		<a href="{% url 'main' %}"><img src="{%static 'img/loho.png'%}" alt=""></a>
+	</div>
+		<div class="header_buts">
+			<ul>
+				<li>
+					<p> <a href="{% url 'main' %}">ГЛАВНАЯ</a></p>
+				</li>
+			</ul>
+		</div>
+		<div class="header_buts">
+			<ul>
+				<li>
+			<p> <a href="{% url 'themes' %}">ТЕМЫ</a></p>
+				</li>
+			</ul>
+		</div>
+
+		<div class="profile">
+			{% if user.is_authenticated %}
+			<div class="profile_nick">
+				<div class="profile_img">
+				<img src="{% static 'img/Pimon.png' %}" alt="Аватар пользователя">
+				</div>
+				<p><a href="{% url 'lk' %}">{{user.username}}</a></p> <a href="{% url 'logout' %}">Выйти</a>
+			</div>
+			{% else %}
+			<div class="header_buts">
+			<ul>
+				<li>
+			<p> <a href="{% url 'reg' %}"	>РЕГИСТРАЦИЯ</a></p>
+				</li>
+			</ul>
+			</div>
+			<div class="header_buts">
+			<ul>
+				<li>
+			<p> <a href="{% url 'login' %}">ВХОД</a></p>
+				</li>
+			</ul>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+    <div class="containerthemes">
+		<div class="cancelthemeblock" id="cancelthemeblock">
+			<img src="{% static 'img/krest.png' %}" alt="">
+		</div>
+		<div class="themebut" id="open">
+			<a class="myButton" href="#">Создать тему</a>
+		</div>
+			<div class="themeblock" id="themeblock">
+				<form method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					<label for="themename" id="themename">Название темы:</label>
+					<input type="text" name="themename" placeholder="Название вашей темы">
+					<label for="themecontent">Содержание:</label>
+					<textarea name="themecontent" id="themecontent" cols="30" rows="10">
+					</textarea>
+					<label for="themeimg" id="themeimg">Загрузить изображение:</label>
+					<input name="themeimg" type="file">
+					<br>
+    			<button class="button" onclick="sendText()">Submit text</button>
+				</form>cd
+			</div>
+				<div class="themebox">
+					{% for s in themes%}
+					<div class="themeсont">
+						<a href="{% url 'insidetheme' s.pk %}">{{s.themename}}</a>
+						<img src="/static/img/{{s.themeimg}}">
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+			<script src="{% static 'js/script.js' %}"></script>	
+	</body>
+</html>
