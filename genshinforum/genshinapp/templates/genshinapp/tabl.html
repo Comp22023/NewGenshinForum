@@ -1,0 +1,91 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+	<title>{% block title %}Таблица{% endblock title %}</title>
+	<link rel="stylesheet" href="{% static 'js/bxslider/dist/jquery.bxslider.css'%}">
+	<script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid black;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Показатель</th>
+            <th>Ед. измерения</th>
+            <th>Значение показателя</th>
+        </tr>
+        <tr>
+            <td colspan="3">1. Технические показатели</td>
+        </tr>
+        <tr>
+            <td>Среднее время работы программного продукта</td>
+            <td>час.</td>
+            <td>414</td>
+        </tr>
+        <tr>
+            <td colspan="3">2. Экономические показатели</td>
+        </tr>
+        <tr>
+            <td>Себестоимость программного продукта</td>
+            <td>руб.</td>
+            <td>146174,26</td>
+        </tr>
+        <tr>
+            <td>Капитальные вложения</td>
+            <td>руб.</td>
+            <td>4630,93</td>
+        </tr>
+        <tr>
+            <td>Прибыль от реализации программного продукта</td>
+            <td>руб.</td>
+            <td>1834,14</td>
+        </tr>
+        <tr>
+            <td>ОТпускная цена программного продукта</td>
+            <td>руб.</td>
+            <td>149108,88</td>
+        </tr>
+        <tr>
+            <td>Коэффициент экономической эффективности</td>
+            <td>%</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Срок окупаемости</td>
+            <td>мес.</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Затраты на машино-час услуг</td>
+            <td>руб./час</td>
+            <td>353,05</td>
+        </tr>
+        <tr>
+            <td>Рентабельность производства</td>
+            <td>%</td>
+            <td>50,00</td>
+        </tr>
+        <tr>
+            <td>Рентабельность продукции</td>
+            <td>%</td>
+            <td>27,7</td>
+        </tr>
+    </table>
+</body>
+</html>
