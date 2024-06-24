@@ -8,6 +8,8 @@ from django.urls import reverse_lazy
 def index(request):
     return render(request, 'genshinapp/index.html')
 
+def tabl(request):
+    return render(request, 'genshinapp/tabl.html')
 
 def themes(request):
     if request.method == 'POST':

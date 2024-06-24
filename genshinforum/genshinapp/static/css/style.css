@@ -42,7 +42,7 @@ body{
 }
 .header_buts a{
     text-decoration: none;
-	font-size: 25px;
+	font-size: 23px;
 	color: white;
 	font-family: '85w-heavy1';
 }
@@ -457,13 +457,43 @@ form{
     margin-bottom: 2%;
     text-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
+.tabltxt{
+    width: 40%;
+    backdrop-filter: blur(2px);
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+.tabltxt p{
+    color:white;
+    font-family: '85w-heavy1';
+    text-align: center;
+    font-size: 20px;
+    -webkit-text-stroke: #517194;
+    text-shadow: 1px 1px 2px black;
+}
+table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid black;
+            background-color: #BEA8CB;
+        }
+        th {
+            background-color: #BEA8CB;
+}
+
 @media (min-width: 1401px) and (max-width: 1920px) {
     .menu{
         display: none;
     }
 }
-@media (min-width: 700px) and (max-width: 1400px) {
+}
 
+@media (min-width: 700px) and (max-width: 1400px) {
     .aboutforum{
         width: 90%;
     }
@@ -512,7 +542,7 @@ form{
         width: 40%;
      }
      .header_buts a{
-        font-size: 20px;
+        font-size: 15px !important;
      }
      .header_buts{
         padding-left: 2%;
